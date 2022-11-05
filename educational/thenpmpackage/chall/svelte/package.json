@@ -1,0 +1,27 @@
+{
+	"name": "svelte-jwash",
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"serve": "vite preview",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"format": "prettier --ignore-path .prettierignore --write --plugin-search-dir=. ."
+	},
+	"devDependencies": {
+		"@sveltejs/vite-plugin-svelte": "^1.0.0-next.23",
+		"@tsconfig/svelte": "^2.0.1",
+		"svelte": "^3.42.5",
+		"svelte-check": "^2.2.5",
+		"svelte-preprocess": "^4.9.4",
+		"tslib": "^2.3.1",
+		"typescript": "^4.4.3",
+		"vite": "^2.5.6",
+		"prettier": "^2.4.0",
+		"prettier-plugin-svelte": "^2.4.0"
+	},
+	"dependencies": {
+		"@kahi-ui/framework": "^0.3.4"
+	}
+}

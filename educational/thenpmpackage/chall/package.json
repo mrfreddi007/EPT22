@@ -1,0 +1,20 @@
+{
+  "name": "node-jwash",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "docker:build": "docker build -t jwash:$(echo $npm_package_version) --no-cache .",
+    "docker:save": "docker save jwash:$(echo $npm_package_version) | gzip > ./jwash-$(echo $npm_package_version).tar.gz",
+    "docker:run": "docker run -p 3000:3000 -i --rm --env PORT=3000 --env NODE_ENV=development --env FLAG=$FLAG jwash:$(echo $npm_package_version)",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "starsiv",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-serialize": "^0.0.4",
+    "util": "^0.12.4"
+  }
+}
