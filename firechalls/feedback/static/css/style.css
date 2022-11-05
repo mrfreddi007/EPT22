@@ -1,0 +1,28 @@
+body {
+    background-color: #2e303e;
+    font-family: "Equinor";
+    color: #e9ebfc !important;
+  }
+
+    .bg-light {
+    background-color: #007079 !important;
+    color: #FFF !important;
+  }
+   .bg-light a {
+    color: #e9ebfc !important;
+   }
+
+  a { 
+    color: #00a2ad !important;
+  }
+  table {
+    color: #e9ebfc !important;
+  }
+
+  hr {
+    border: 1px solid #e9ebfc !important;
+  }
+
+a:hover {
+    text-decoration: underline !important;
+}

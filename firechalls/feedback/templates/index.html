@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   <body>
+     <main>
+        <div class="px-4 py-3 my-2 text-center">
+            <h1>EPT CTF Feedback Form</h1>            
+          </div>
+
+          <form action="success" method="post">
+            <div class="form-group row">
+              <label for="name" class="col-4 col-form-label">Your name</label> 
+              <div class="col-8">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fa fa-address-card"></i>
+                    </div>
+                  </div> 
+                  <input id="name" name="name" placeholder="Røllik Münch" type="text" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="challengequality" class="col-4 col-form-label">Challenge Quality</label> 
+              <div class="col-8">
+                <select id="challengequality" name="challengequality" class="custom-select">
+                  <option value="good">Good</option>
+                  <option value="verygood">Very Good</option>
+                  <option value="superb">Superb</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-4">Overall Impression</label> 
+              <div class="col-8">
+                <div class="custom-control custom-checkbox custom-control-inline">
+                  <input name="impression" id="impression_0" type="checkbox" class="custom-control-input" value="good"> 
+                  <label for="impression_0" class="custom-control-label">Good</label>
+                </div>
+                <div class="custom-control custom-checkbox custom-control-inline">
+                  <input name="impression" id="impression_1" type="checkbox" class="custom-control-input" value="verygood"> 
+                  <label for="impression_1" class="custom-control-label">Very Good</label>
+                </div>
+                <div class="custom-control custom-checkbox custom-control-inline">
+                  <input name="impression" id="impression_2" type="checkbox" class="custom-control-input" value="Excellent" checked="checked"> 
+                  <label for="impression_2" class="custom-control-label">Excellent</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="textarea" class="col-4 col-form-label">Other comments</label> 
+              <div class="col-8">
+                <textarea id="othercomments" name="othercomments" cols="40" rows="5" class="form-control"></textarea>
+              </div>
+            </div>  
+            <div class="form-group row">
+              <div class="offset-4 col-8">
+                <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="alert alert-danger" role="alert">
+                {% for message in messages %}
+                <p class="text-center">{{ message }}<p>
+                {% endfor %}
+          </div>
+        {% endif %}
+        {% endwith %}
+     </main>      
+     <script>
+
+      $(document).ready(function() {
+        $('input[type="checkbox"]').on('change', async function() {
+          $('input[type="checkbox"]').not(this).prop('checked', false);
+          await new Promise(r => setTimeout(r, 500));
+          $('#impression_0').prop('checked', false);
+          $('#impression_1').prop('checked', false);
+          $('#impression_2').prop('checked', true);
+        });
+       
+});    
+
+     </script>
+   </body>
+
+   {% endblock %}

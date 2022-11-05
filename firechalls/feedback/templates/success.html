@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+    <main>
+        <div class="px-4 py-3 my-2 text-center">
+            <img class="d-block mx-auto mb-4" src="/static/images/ept.svg" alt="Azure Logo" width="192" height="192"/>
+            <h1 class="display-6 fw-bold">Thank you for the feedback {{ name }}</h1>
+            <p> We read all feedback carefully! </p>
+
+            <a href="/" class="btn btn-primary btn-lg px-4 gap-3">Back home</a>
+        </div>
+    </main>      
+</body>
+
+{% endblock %}
